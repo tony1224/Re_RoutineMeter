@@ -11,6 +11,7 @@
 		84F1B7202BD733D000AFD7C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B71F2BD733D000AFD7C9 /* ContentView.swift */; };
 		84F1B7222BD733D400AFD7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F1B7212BD733D400AFD7C9 /* Assets.xcassets */; };
 		84F1B7262BD733D400AFD7C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F1B7252BD733D400AFD7C9 /* Preview Assets.xcassets */; };
+		84F1B72D2BD7390600AFD7C9 /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B72C2BD7390600AFD7C9 /* FeedItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		84F1B7212BD733D400AFD7C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84F1B7232BD733D400AFD7C9 /* RoutineMeter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoutineMeter.entitlements; sourceTree = "<group>"; };
 		84F1B7252BD733D400AFD7C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84F1B72C2BD7390600AFD7C9 /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				84F1B7212BD733D400AFD7C9 /* Assets.xcassets */,
 				84F1B7232BD733D400AFD7C9 /* RoutineMeter.entitlements */,
 				84F1B7242BD733D400AFD7C9 /* Preview Content */,
+				84F1B72C2BD7390600AFD7C9 /* FeedItemView.swift */,
 			);
 			path = RoutineMeter;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F1B7202BD733D000AFD7C9 /* ContentView.swift in Sources */,
+				84F1B72D2BD7390600AFD7C9 /* FeedItemView.swift in Sources */,
 				84F1B71E2BD733D000AFD7C9 /* RoutineMeterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
