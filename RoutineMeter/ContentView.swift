@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let titles: [String] = [
+    private let routineItems: [String] = [
         "朝ストレッチ", "筋トレ", "コーディング", "英語"
     ]
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(titles, id: \.self) { title in
-                    FeedItemView(title: title)
+                ForEach(routineItems, id: \.self) { item in
+                    FeedItemView(title: item)
                 }
             }
             .navigationBarTitle("日課メーター", displayMode: .inline)
