@@ -23,6 +23,7 @@ struct FeedItemView: View {
             } label: {
                 Text(title)
                     .foregroundStyle(.black)
+                    .strikethrough(isTapped)
             }
         }
     }
