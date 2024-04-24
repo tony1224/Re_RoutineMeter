@@ -32,6 +32,12 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle("日課メーター", displayMode: .inline)
+            .navigationBarItems(trailing: Button{
+                
+            } label: {
+                Image(systemName: "plus.circle")
+                    .foregroundStyle(.black)
+            })
             .task {
                 await load()
             }

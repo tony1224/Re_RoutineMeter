@@ -66,7 +66,6 @@
 				84F1B7212BD733D400AFD7C9 /* Assets.xcassets */,
 				84F1B7232BD733D400AFD7C9 /* RoutineMeter.entitlements */,
 				84F1B7242BD733D400AFD7C9 /* Preview Content */,
-				84F1B72C2BD7390600AFD7C9 /* FeedItemView.swift */,
 			);
 			path = RoutineMeter;
 			sourceTree = "<group>";
@@ -93,6 +92,7 @@
 			children = (
 				84F1B7332BD951E000AFD7C9 /* ContentStore.swift */,
 				84F1B71F2BD733D000AFD7C9 /* ContentView.swift */,
+				84F1B72C2BD7390600AFD7C9 /* FeedItemView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
