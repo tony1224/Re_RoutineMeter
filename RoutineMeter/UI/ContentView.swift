@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var shouldShowAlert: Bool = false
     @State private var errorMessage: String = ""
+    @State private var isPresented: Bool = false
     @EnvironmentObject var contentStore: ContentStore
     var items: [Routine] {
         contentStore.values
@@ -33,7 +34,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("日課メーター", displayMode: .inline)
             .navigationBarItems(trailing: Button{
-                
+                self.isPresented = true
             } label: {
                 Image(systemName: "plus.circle")
                     .foregroundStyle(.black)
@@ -44,6 +45,10 @@ struct ContentView: View {
             .alert("Error", isPresented: $shouldShowAlert, actions: {}, message: {
                 Text(errorMessage)
             })
+            .fullScreenCover(isPresented: $isPresented) {
+                RoutineAddView()
+                    .background(BackgroundClearView())
+            }
         }
     }
 }
