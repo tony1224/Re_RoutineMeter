@@ -8,29 +8,28 @@
 import SwiftUI
 
 struct RoutineAddView: View {
+    @State private var inputTitle = ""
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
-            VStack(alignment: .center, spacing: 16) {
-                Text("this is alert view")
+            Color.black.opacity(0.6)
+                .ignoresSafeArea(.all)
+            
+            VStack(spacing: 16) {
+                TextField("日課を入力してください。", text: $inputTitle)
+                    .padding()
                 Button {
-                    var transaction = Transaction()
-                    transaction.disablesAnimations = true
-                    withTransaction(transaction) {
-                        self.dismiss
-                    }
+                    dismiss()
                 } label: {
                     Text("close")
                 }
             }
-            .padding(16)
+            .padding()
+            .frame(width: 300)
             .background(Color.white)
-            .cornerRadius(10)
-            .shadow(radius: 5)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.init(white: 0, opacity: 0.5))
     }
 }
 

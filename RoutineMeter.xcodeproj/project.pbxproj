@@ -15,7 +15,6 @@
 		84F1B7302BD9510800AFD7C9 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B72F2BD9510800AFD7C9 /* Routine.swift */; };
 		84F1B7322BD9514F00AFD7C9 /* RoutineRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B7312BD9514F00AFD7C9 /* RoutineRepositoryProtocol.swift */; };
 		84F1B7342BD951E000AFD7C9 /* ContentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B7332BD951E000AFD7C9 /* ContentStore.swift */; };
-		84F1B7382BDBFA7C00AFD7C9 /* BackgroundClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B7372BDBFA7C00AFD7C9 /* BackgroundClearView.swift */; };
 		84F1B73A2BDBFB2100AFD7C9 /* RoutineAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1B7392BDBFB2100AFD7C9 /* RoutineAddView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		84F1B72F2BD9510800AFD7C9 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		84F1B7312BD9514F00AFD7C9 /* RoutineRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineRepositoryProtocol.swift; sourceTree = "<group>"; };
 		84F1B7332BD951E000AFD7C9 /* ContentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStore.swift; sourceTree = "<group>"; };
-		84F1B7372BDBFA7C00AFD7C9 /* BackgroundClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundClearView.swift; sourceTree = "<group>"; };
 		84F1B7392BDBFB2100AFD7C9 /* RoutineAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineAddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 		84F1B71C2BD733D000AFD7C9 /* RoutineMeter */ = {
 			isa = PBXGroup;
 			children = (
-				84F1B7362BDBFA6300AFD7C9 /* Util */,
 				84F1B7352BD951E800AFD7C9 /* UI */,
 				84F1B72E2BD950E100AFD7C9 /* Domain */,
 				84F1B71D2BD733D000AFD7C9 /* RoutineMeterApp.swift */,
@@ -101,14 +98,6 @@
 				84F1B7392BDBFB2100AFD7C9 /* RoutineAddView.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		84F1B7362BDBFA6300AFD7C9 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				84F1B7372BDBFA7C00AFD7C9 /* BackgroundClearView.swift */,
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +177,6 @@
 				84F1B7302BD9510800AFD7C9 /* Routine.swift in Sources */,
 				84F1B71E2BD733D000AFD7C9 /* RoutineMeterApp.swift in Sources */,
 				84F1B7322BD9514F00AFD7C9 /* RoutineRepositoryProtocol.swift in Sources */,
-				84F1B7382BDBFA7C00AFD7C9 /* BackgroundClearView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

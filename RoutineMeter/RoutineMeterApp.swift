@@ -12,6 +12,7 @@ struct RoutineMeterApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ContentStore(repository: RoutineRepository()))
         }
     }
 }

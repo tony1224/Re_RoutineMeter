@@ -27,29 +27,40 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items, id: \.id) { item in
-                    FeedItemView(title: item.title)
+//            ZStack {
+                List {
+                    ForEach(items, id: \.id) { item in
+                        FeedItemView(title: item.title)
+                    }
                 }
+                .navigationBarTitle("日課メーター", displayMode: .inline)
+                .navigationBarItems(trailing: Button{
+                    withAnimation {
+                        isPresented.toggle()
+                    }
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .foregroundStyle(.black)
+                })
+                .task {
+                    await load()
+                }
+                .alert("Error", isPresented: $shouldShowAlert, actions: {}, message: {
+                    Text(errorMessage)
+                })
+                .fullScreenCover(isPresented: $isPresented) {
+                    RoutineAddView()
+                    // TODO: iOS16.4で使える
+//                        .presentationBackground(.clear)
+                }
+                
+//                if isPresented {
+//                    RoutineAddView()
+//                        .transition(.opacity)
+//                }
             }
-            .navigationBarTitle("日課メーター", displayMode: .inline)
-            .navigationBarItems(trailing: Button{
-                self.isPresented = true
-            } label: {
-                Image(systemName: "plus.circle")
-                    .foregroundStyle(.black)
-            })
-            .task {
-                await load()
-            }
-            .alert("Error", isPresented: $shouldShowAlert, actions: {}, message: {
-                Text(errorMessage)
-            })
-            .fullScreenCover(isPresented: $isPresented) {
-                RoutineAddView()
-                    .background(BackgroundClearView())
-            }
-        }
+            
+//        }
     }
 }
 
