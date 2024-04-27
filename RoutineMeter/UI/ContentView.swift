@@ -27,7 +27,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-//            ZStack {
+            ZStack {
                 List {
                     ForEach(items, id: \.id) { item in
                         FeedItemView(title: item.title)
@@ -48,19 +48,13 @@ struct ContentView: View {
                 .alert("Error", isPresented: $shouldShowAlert, actions: {}, message: {
                     Text(errorMessage)
                 })
-                .fullScreenCover(isPresented: $isPresented) {
-                    RoutineAddView()
-                    // TODO: iOS16.4で使える
-//                        .presentationBackground(.clear)
+                if isPresented {
+                    RoutineAddView(isPresented: $isPresented)
+                        .transition(.opacity)
+                        .zIndex(10)
                 }
-                
-//                if isPresented {
-//                    RoutineAddView()
-//                        .transition(.opacity)
-//                }
             }
-            
-//        }
+        }
     }
 }
 

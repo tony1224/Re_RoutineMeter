@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct RoutineAddView: View {
+    @Binding var isPresented: Bool
     @State private var inputTitle = ""
     @Environment(\.dismiss) var dismiss
+    
+    init(isPresented: Binding<Bool>) {
+        _isPresented = isPresented
+    }
     
     var body: some View {
         ZStack {
@@ -20,7 +25,7 @@ struct RoutineAddView: View {
                 TextField("日課を入力してください。", text: $inputTitle)
                     .padding()
                 Button {
-                    dismiss()
+                    isPresented = false
                 } label: {
                     Text("close")
                 }
@@ -35,6 +40,6 @@ struct RoutineAddView: View {
 
 struct RoutineAddView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineAddView()
+        RoutineAddView(isPresented: .constant(true))
     }
 }
