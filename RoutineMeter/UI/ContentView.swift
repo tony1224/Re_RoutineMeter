@@ -24,6 +24,15 @@ struct ContentView: View {
             errorMessage = error.localizedDescription
         }
     }
+
+    func add(title: String) async {
+        do {
+            try await contentStore.addRoutine(name: title)
+        } catch {
+            shouldShowAlert = true
+            errorMessage = error.localizedDescription
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -48,8 +57,14 @@ struct ContentView: View {
                 .alert("Error", isPresented: $shouldShowAlert, actions: {}, message: {
                     Text(errorMessage)
                 })
+
                 if isPresented {
-                    RoutineAddView(isPresented: $isPresented)
+                    RoutineAddView(isPresented: $isPresented, addAction: { title in
+                        print(title)
+                        Task {
+                            await add(title: title)
+                        }
+                    })
                         .transition(.opacity)
                         .zIndex(10)
                 }
@@ -65,13 +80,21 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-private struct PreviewRoutineRepository: RoutineRepositoryProtocol {
+private class PreviewRoutineRepository: RoutineRepositoryProtocol {
+    private var values: [Routine] = []
+    
     func findAll() async throws -> [Routine] {
-        [
+        values = [
             .init(id: "1", title: "朝ストレッチ"),
             .init(id: "2", title: "筋トレ"),
             .init(id: "3", title: "コーディング"),
             .init(id: "4", title: "英語")
         ]
+        return values
     }
+
+    func add(routine: Routine) async throws {
+        self.values.append(routine)
+    }
+    
 }

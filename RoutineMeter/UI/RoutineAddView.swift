@@ -11,9 +11,11 @@ struct RoutineAddView: View {
     @Binding var isPresented: Bool
     @State private var inputTitle = ""
     @Environment(\.dismiss) var dismiss
+    private let addAction: (String) -> Void
     
-    init(isPresented: Binding<Bool>) {
+    init(isPresented: Binding<Bool>, addAction: @escaping (String) -> Void) {
         _isPresented = isPresented
+        self.addAction = addAction
     }
     
     var body: some View {
@@ -24,11 +26,21 @@ struct RoutineAddView: View {
             VStack(spacing: 16) {
                 TextField("日課を入力してください。", text: $inputTitle)
                     .padding()
-                Button {
-                    isPresented = false
-                } label: {
-                    Text("close")
+                HStack {
+                    Button {
+                        isPresented = false
+                    } label: {
+                        Text("閉じる")
+                    }
+                    Button {
+                        addAction(inputTitle)
+                        isPresented = false
+                    } label: {
+                        Text("追加")
+                    }
+
                 }
+                
             }
             .padding()
             .frame(width: 300)
@@ -40,6 +52,8 @@ struct RoutineAddView: View {
 
 struct RoutineAddView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineAddView(isPresented: .constant(true))
+        RoutineAddView(isPresented: .constant(true), addAction: { _ in
+            
+        })
     }
 }

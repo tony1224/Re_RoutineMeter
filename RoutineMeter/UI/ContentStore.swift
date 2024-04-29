@@ -20,5 +20,11 @@ class ContentStore: ObservableObject {
     func getRoutines() async throws {
         values = try await repository.findAll()
     }
+    
+    func addRoutine(name: String) async throws {
+        let routine = Routine(id: UUID().uuidString, title: name)
+        try await repository.add(routine: routine)
+        values.append(routine)
+    }
 
 }
