@@ -31,14 +31,13 @@ struct RoutineAddView: View {
                         isPresented = false
                     } label: {
                         Text("閉じる")
-                    }
+                    }.frame(maxWidth: .infinity)
                     Button {
                         addAction(inputTitle)
                         isPresented = false
                     } label: {
                         Text("追加")
-                    }
-
+                    }.frame(maxWidth: .infinity)
                 }
                 
             }
